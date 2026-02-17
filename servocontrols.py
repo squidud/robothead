@@ -1,7 +1,6 @@
 from gpiozero import AngularServo
 from time import sleep
 
-# Create servos on different GPIO pins
 eyeslr = AngularServo(17)  # eyes l/r
 eyesud = AngularServo(27)  # eyes up/down
 jaw = AngularServo(22)  # jaw
