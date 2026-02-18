@@ -1,5 +1,6 @@
 from gpiozero import AngularServo
 from time import sleep
+import random
 
 # Create servos on different GPIO pins
 eyeslr = AngularServo(12)  # eyes l/r
@@ -17,7 +18,17 @@ sleep(1)
 
 while True:
     eyeslr.angle = -90
-    sleep(0.9)
+    eyesud.angle = -90
+    sleep(random.uniform(0.6, 1.4))
 
     eyeslr.angle = 90
-    sleep(0.9)
+    eyesud.angle = -90
+    sleep(random.uniform(0.6, 1.4))
+    
+    eyeslr.angle = 90
+    eyesud.angle = 90
+    sleep(random.uniform(0.6, 1.4))
+
+    eyeslr.angle = -90
+    eyesud.angle = 90
+    sleep(random.uniform(0.6, 1.4))
