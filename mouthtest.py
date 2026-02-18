@@ -23,5 +23,5 @@ while True:
 
     jaw.angle = 90
     sleep(1)
-    jaw.angle = 0
+    jaw.angle = -90
     sleep(1)
