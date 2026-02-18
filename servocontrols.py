@@ -11,12 +11,13 @@ def angle_to_duty(angle):
 # Pi 5 hardware PWM via RP1 chip
 # Channel 0 = GPIO 12, Channel 1 = GPIO 13
 # Channel 2 = GPIO 18, Channel 3 = GPIO 19
-eyeslr = HardwarePWM(pwm_channel=0, hz=SERVO_HZ, chip=0)  # GPIO 12 - eyes l/r
-eyesud = HardwarePWM(pwm_channel=1, hz=SERVO_HZ, chip=0)  # GPIO 13 - eyes up/down
-jaw = HardwarePWM(pwm_channel=2, hz=SERVO_HZ, chip=0)     # GPIO 18 - jaw
-necklr = HardwarePWM(pwm_channel=3, hz=SERVO_HZ, chip=0)  # GPIO 19 - neck l/r
+eyeslr = HardwarePWM(pwm_channel=0, hz=SERVO_HZ, chip=1)  # GPIO 12 - eyes l/r
+eyesud = HardwarePWM(pwm_channel=1, hz=SERVO_HZ, chip=1)  # GPIO 13 - eyes up/down
+jaw = HardwarePWM(pwm_channel=2, hz=SERVO_HZ, chip=1)     # GPIO 18 - jaw
+necklr = HardwarePWM(pwm_channel=3, hz=SERVO_HZ, chip=1)  # GPIO 19 - neck l/r
 
 # Start all servos at 90 degrees
+print("Starting servos...")
 eyeslr.start(angle_to_duty(90))
 eyesud.start(angle_to_duty(90))
 jaw.start(angle_to_duty(90))
@@ -26,9 +27,11 @@ sleep(1)
 
 try:
     while True:
+        print("Moving to 0")
         eyeslr.change_duty_cycle(angle_to_duty(0))
         sleep(0.9)
 
+        print("Moving to 180")
         eyeslr.change_duty_cycle(angle_to_duty(180))
         sleep(0.9)
 except KeyboardInterrupt:
