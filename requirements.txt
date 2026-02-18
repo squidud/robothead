@@ -1,2 +1,1 @@
-rpi-hardware-pwm
 setuptools==82.0.0
