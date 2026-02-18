@@ -19,16 +19,16 @@ sleep(1)
 while True:
     eyeslr.angle = -90
     eyesud.angle = -90
-    sleep(random.uniform(0.6, 1.4))
+    sleep(random.uniform(0.4, 2.3))
 
     eyeslr.angle = 90
     eyesud.angle = -90
-    sleep(random.uniform(0.6, 1.4))
+    sleep(random.uniform(0.4, 2.3))
     
     eyeslr.angle = 90
     eyesud.angle = 90
-    sleep(random.uniform(0.6, 1.4))
+    sleep(random.uniform(0.4, 2.3))
 
     eyeslr.angle = -90
     eyesud.angle = 90
-    sleep(random.uniform(0.6, 1.4))
+    sleep(random.uniform(0.4, 2.3))
