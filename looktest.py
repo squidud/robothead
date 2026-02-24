@@ -21,7 +21,7 @@ cap = cv2.VideoCapture(0)  # type: ignore[attr-defined]
 
 # --- Tuning ---
 ALPHA = 0.25         # EMA smoothing per frame (higher = faster/less smooth)
-LOST_FRAMES = 10     # Consecutive no-face frames before returning to center
+LOST_FRAMES = 20     # Consecutive no-face frames before returning to center
 RETURN_ALPHA = 0.06  # Speed of return to center
 
 # --- State ---
